@@ -14,9 +14,13 @@ module.exports = {
             //     test: /\.js$/,
             //     loader: './loaders/test-loader.js',
             // },
+            // {
+            //     test: /\.js$/,
+            //     use: ['./loaders/demo/test1', './loaders/demo/test2'],
+            // },
             {
                 test: /\.js$/,
-                use: ['./loaders/demo/test1', './loaders/demo/test2'],
+                use: ['./loaders/demo/test3'],
             }
         ],
     },
