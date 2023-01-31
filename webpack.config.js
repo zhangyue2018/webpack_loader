@@ -29,6 +29,15 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: ['./loaders/clean-log-loader'],
+            },
+            {
+                test: /\.js$/,
+                use: [ {
+                    loader: './loaders/banner-loader',
+                    options: {
+                        author: '张三丰',
+                    }
+                }],
             }
         ],
     },
