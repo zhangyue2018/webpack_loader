@@ -22,9 +22,13 @@ module.exports = {
             //     test: /\.js$/,
             //     use: ['./loaders/demo/test3'],
             // },
+            // {
+            //     test: /\.js$/,
+            //     use: ['./loaders/demo/test4', './loaders/demo/test5', './loaders/demo/test6'],
+            // },
             {
                 test: /\.js$/,
-                use: ['./loaders/demo/test4', './loaders/demo/test5', './loaders/demo/test6'],
+                use: ['./loaders/clean-log-loader'],
             }
         ],
     },
