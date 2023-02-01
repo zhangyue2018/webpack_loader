@@ -1,0 +1,15 @@
+.box1 {
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/tp1.jpg');
+}
+.box2 {
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/tp2.webp');
+}
+.box3 {
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/wall3.jpg');
+}

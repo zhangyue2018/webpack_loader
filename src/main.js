@@ -1,3 +1,4 @@
+import './css/index.css';
 console.log('hello main');
 console.log('hello world');
 console.log('hello 111111');
