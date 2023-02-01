@@ -38,6 +38,13 @@ module.exports = {
                         author: '张三丰',
                     }
                 }],
+            },
+            {
+                test: /\.js$/,
+                loader: './loaders/babel-loader',
+                options: {
+                    presets: ["@babel/preset-env"],
+                }
             }
         ],
     },
