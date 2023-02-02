@@ -13,3 +13,8 @@
     height: 200px;
     background-image: url('../images/wall3.jpg');
 }
+.box4 {
+    width: 100px;
+    height: 200px;
+    background-color: aqua;
+}

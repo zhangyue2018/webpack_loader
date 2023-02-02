@@ -32,6 +32,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
+                include: path.resolve(__dirname, './src'),
                 use: [ {
                     loader: './loaders/banner-loader',
                     options: {
@@ -53,7 +54,8 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                // use: ['style-loader', 'css-loader'],
+                use: ['./loaders/style-loader', 'css-loader'],
             }
         ],
     },
