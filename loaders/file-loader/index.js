@@ -6,7 +6,7 @@ module.exports = function(content) {
         content,
     });
     interpolateName = `images/${interpolateName}`;
-    console.log('---222----', interpolateName);
+    // console.log('---222----', interpolateName);
     // 2. 将文件输出出去
     this.emitFile(interpolateName, content);
     // 3. 返回 module.exports = "文件路径(文件名)"

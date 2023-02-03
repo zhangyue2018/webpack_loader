@@ -23,7 +23,7 @@ module.exports = function(content) {
 
 module.exports.pitch = function(remainingRequest) {
     // remainingRequest: 剩下还需要处理的loader
-    console.log('=======', remainingRequest); // D:\test\webpack_loader\node_modules\css-loader\dist\cjs.js!D:\test\webpack_loader\src\css\index.css
+    // console.log('=======', remainingRequest); // D:\test\webpack_loader\node_modules\css-loader\dist\cjs.js!D:\test\webpack_loader\src\css\index.css
     // 1. 将remainingRequest中的绝对路径改成相对路径（因为后面只能使用相对路径）
     const relativePath = remainingRequest.split("!").map(absolutePath => {
         // 返回相对路径
@@ -31,7 +31,7 @@ module.exports.pitch = function(remainingRequest) {
         // this.context--当前loader所在的目录
         return this.utils.contextify(this.context, absolutePath);
     }).join("!");
-    console.log('-------relativePath--------', relativePath); // ../../node_modules/css-loader/dist/cjs.js!./index.css
+    // console.log('-------relativePath--------', relativePath); // ../../node_modules/css-loader/dist/cjs.js!./index.css
 
     // 2. 引入css-loader处理后的资源
     // 3. 创建style，将内容插入页面生效
