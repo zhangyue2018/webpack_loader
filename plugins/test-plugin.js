@@ -54,6 +54,12 @@ class TestPlugin {
                 console.log('TestPlugin make --11111-----');
                 callback();
             }, 3000);
+
+            // 需要在compilation hooks触发前注册才能使用
+            // 注意：只有在compiler.hooks.make注册的钩子函数都执行完成后，compilation.hooks.seal注册的钩子函数才会执行，因为生命周期的原因
+            compilation.hooks.seal.tap('TestPlugin', () => {
+                console.log('TestPlugin seal========');
+            });
         });
 
         compiler.hooks.make.tapAsync('TestPlugin', (compilation, callback) => {
