@@ -13,6 +13,8 @@ class TestPlugin {
     apply(compiler) {
         console.log('TestPlugin apply');
 
+        debugger;
+
         // 由文档可知，environment是同步钩子，所以需要使用tap注册
         compiler.hooks.environment.tap('TestPlugin', () => {
             console.log('TestPlugin environment');
