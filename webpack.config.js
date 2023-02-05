@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TestPlugin = require('./plugins/test-plugin');
+const BannerWebpackPlugin = require('./plugins/banner-webpack-plugin');
 
 module.exports = {
     entry: './src/main.js',
@@ -31,16 +32,16 @@ module.exports = {
                 test: /\.js$/,
                 use: ['./loaders/clean-log-loader'],
             },
-            {
-                test: /\.js$/,
-                include: path.resolve(__dirname, './src'),
-                use: [ {
-                    loader: './loaders/banner-loader',
-                    options: {
-                        author: '张三丰',
-                    }
-                }],
-            },
+            // {
+            //     test: /\.js$/,
+            //     include: path.resolve(__dirname, './src'),
+            //     use: [ {
+            //         loader: './loaders/banner-loader',
+            //         options: {
+            //             author: '张三丰',
+            //         }
+            //     }],
+            // },
             {
                 test: /\.js$/,
                 loader: './loaders/babel-loader',
@@ -64,7 +65,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './public/index.html'),
         }),
-        new TestPlugin(),
+        // new TestPlugin(),
+        new BannerWebpackPlugin({
+            author: '张三丰'
+        }),
     ],
-    mode: 'development',
+    // mode: 'development',
+    mode: 'production',
 }
