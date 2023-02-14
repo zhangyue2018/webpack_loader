@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TestPlugin = require('./plugins/test-plugin');
 const BannerWebpackPlugin = require('./plugins/banner-webpack-plugin');
 const CleanWebpackPlugin = require('./plugins/clean-webpack-plugin');
+const AnalyzeWebpackPlugin = require('./plugins/analyze-webpack-plugin');
+
 
 module.exports = {
     entry: './src/main.js',
@@ -71,6 +73,7 @@ module.exports = {
             author: '张三丰'
         }),
         new CleanWebpackPlugin(),
+        new AnalyzeWebpackPlugin()
     ],
     // mode: 'development',
     mode: 'production',
