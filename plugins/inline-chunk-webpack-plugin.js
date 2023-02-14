@@ -15,7 +15,13 @@ class InlineChunkWebpackPlugin {
                 assets.bodyTags = this.getInlineChunk(assets.bodyTags, compilation.assets);
             });
             // 删除runtime文件
-            hooks.afterEmit.tap('InlineChunkWebpackPlugin', () => {
+            // hooks.afterEmit.tap('InlineChunkWebpackPlugin', () => {
+            //     Object.keys(compilation.assets).forEach(filepath => {
+            //         let res = this.tests.some(reg => reg.test(filepath));
+            //         if(res) delete compilation.assets[filepath];
+            //     });
+            // });
+            hooks.beforeEmit.tap('InlineChunkWebpackPlugin', () => {
                 Object.keys(compilation.assets).forEach(filepath => {
                     let res = this.tests.some(reg => reg.test(filepath));
                     if(res) delete compilation.assets[filepath];
