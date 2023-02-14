@@ -12,8 +12,14 @@ class CleanWebpackPlugin {
 
     removeFiles(fs, filePath) {
         // 想要删除打包输出目录下的所有资源，需要先将目录下的资源删除，才能删除这个目录
+        let skip = false;
         // 1.读取当前目录下所有资源
-        const files = fs.readdirSync(filePath);
+        try {
+            const files = fs.readdirSync(filePath);
+        } catch(e) {
+            skip = true;
+        }
+        if(skip) return;
         console.log('===files===', files); // [ 'images', 'index.html', 'js' ]
         // 2.遍历，一个个删除
         files.forEach(file => {
